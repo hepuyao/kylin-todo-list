@@ -1,0 +1,5 @@
+任务栏在添加dbus头文件的时候报错
+例如添加 #include <QtDBus/QtDBus>
+然后在函数中连接dbus信号
+例如：QDBusConnection::sessionBus().connect(QString(), QString( "/"), "com.ukui.kwin.window.information", "WindowInfomation",this, SLOT(client_get(QString)));
+此时会报错，显示无法链接dbus动态库

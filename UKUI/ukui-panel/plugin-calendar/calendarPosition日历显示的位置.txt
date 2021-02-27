@@ -1,0 +1,11 @@
+以kylin2004分支为例
+
+目前日历显示的位置是通过函数：
+modifyCalendarWidget();
+不过这样有一个坏处，在华为990上以及wayland环境下，没有主副屏的概念
+并且这样做不是一个通用的解决方案
+目前的想法是
+mWebViewDiag->setGeometry(calculatePopupWindowPos(QSize(mViewWidht+POPUP_BORDER_SPACING,mViewHeight+POPUP_BORDER_SPACING)));
+这行代码替换modifyCalendarWidget(); 函数
+但是关于设计稿中的距离屏幕边缘4像素没有做好
+
